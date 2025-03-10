@@ -1,0 +1,237 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  /* Dark fixed background image from assets folder */
+  background: url('assets/hero-bg.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Container Utility */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 0;
+}
+
+/* Navigation Bar */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.logo h1 {
+  font-size: 1.5rem;
+  color: #ffcc00; /* Accent color */
+  font-weight: 700;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+  color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 4rem;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-name {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #ffcc00;
+}
+.hero-roles {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* Shared Section Styles */
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffcc00;
+}
+.section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #ddd;
+}
+
+/* Expertise Section */
+.expertise-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+.expertise-list li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+.expertise-list li:hover {
+  background: rgba(255, 204, 0, 0.2);
+}
+
+/* Work Section */
+.project-placeholder {
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Experience Section (Collapsible) */
+details {
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  cursor: pointer;
+}
+details summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  outline: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details ul {
+  margin-top: 1rem;
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* Contact Section */
+.contact-info {
+  text-align: center;
+  margin-top: 2rem;
+}
+.contact-info p {
+  margin: 0.5rem 0;
+}
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact-info a:hover {
+  color: #ffcc00;
+}
+.resume-download {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  background: #ffcc00;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: #e6b800;
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.7);
+  padding: 1rem 0;
+  text-align: center;
+}
+footer p {
+  margin: 0;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 2.2rem;
+  }
+  .hero-roles {
+    font-size: 1rem;
+  }
+  .nav-links {
+    display: none; /* Hide nav links on mobile for now */
+  }
+  .navbar {
+    justify-content: space-between;
+  }
+}
