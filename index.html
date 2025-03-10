@@ -2,107 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Pramod Chilukuri | Sr. DevOps Specialist</title>
-  <!-- You can link Google Fonts here for better typography -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pramod Chilukuri | DevOps Portfolio</title>
+  <!-- Google Fonts for Modern Typography -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Link to your stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Sticky Navigation -->
+  <!-- Navigation Bar -->
   <header>
-    <nav class="navbar">
-      <div class="container">
-        <div class="logo">
-          <h1>Pramod Chilukuri</h1>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="navbar container">
+      <!-- "Coding format" name on top-left -->
+      <div class="logo">
+        <h1>&lt;PramodChilukuri/&gt;</h1>
       </div>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <img src="assets/profilepic.jpg" alt="Profile Picture" class="hero-img" />
-      <h2>Sr. DevOps Specialist</h2>
-      <p>Transforming cloud infrastructures with automation and CI/CD excellence</p>
-      <a href="assets/Pramod_DevOps.pdf" target="_blank" class="btn">Download Resume</a>
+  <!-- Home Section (Hero) -->
+  <section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <!-- Big Bold Name -->
+      <h2 class="hero-name">Pramod Chilukuri</h2>
+      <!-- Roles -->
+      <p class="hero-roles">Senior DevOps Specialist | Cloud Engineer | SRE</p>
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <a href="https://github.com/your-github-username" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/your-linkedin-username" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:pramod.chilukuri3@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="tel:647-247-6533" target="_blank"><i class="fas fa-phone"></i></a>
+      </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am a passionate DevOps Engineer with extensive experience in cloud infrastructure, automation, and CI/CD pipelines. I specialize in AWS, Azure, Kubernetes, Jenkins, and Terraform, ensuring scalable, efficient systems.</p>
+  <!-- Expertise Section -->
+  <section id="expertise" class="section container">
+    <h2>Expertise</h2>
+    <p class="section-intro">
+      I specialize in modern DevOps practices, ensuring scalable and efficient systems. Below are some of the key tools and technologies I work with:
+    </p>
+    <ul class="expertise-list">
+      <li>AWS</li>
+      <li>Azure</li>
+      <li>GCP</li>
+      <li>Kubernetes</li>
+      <li>Docker</li>
+      <li>CI/CD (Jenkins, GitLab, GitHub Actions)</li>
+      <li>Terraform</li>
+      <li>Ansible</li>
+      <li>Python</li>
+      <li>Bash/PowerShell</li>
+    </ul>
+  </section>
+
+  <!-- Work Section -->
+  <section id="work" class="section container">
+    <h2>Work</h2>
+    <p class="section-intro">
+      Here are some of the projects I've worked on (coming soon!). Stay tuned for more details or check out my GitHub profile.
+    </p>
+    <div class="project-placeholder">
+      <p>Projects will be showcased here...</p>
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience">
-    <div class="container">
-      <h2>Professional Experience</h2>
-      <div class="timeline">
-        <!-- Timeline Item -->
-        <div class="timeline-item">
-          <h3>Lululemon - Remote, Toronto</h3>
-          <span class="timeline-date">Nov 2019 – Present</span>
-          <p><strong>DevOps Engineer</strong></p>
-          <ul>
-            <li>Designed and implemented cloud-based solutions on AWS.</li>
-            <li>Automated infrastructure with Terraform and CloudFormation.</li>
-            <li>Improved deployment speed by 30% with CI/CD pipelines.</li>
-          </ul>
-        </div>
-        <!-- Repeat for other experiences -->
-      </div>
-    </div>
-  </section>
+  <section id="experience" class="section container">
+    <h2>Experience</h2>
+    <p class="section-intro">
+      Below is my professional background in a collapsible format. Click each to expand details.
+    </p>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li><i class="fab fa-aws"></i> AWS</li>
-        <li><i class="fab fa-microsoft"></i> Azure</li>
-        <li><i class="fas fa-server"></i> GCP</li>
-        <li><i class="fas fa-code-branch"></i> CI/CD</li>
-        <li><i class="fab fa-docker"></i> Docker</li>
-        <li><i class="fas fa-cubes"></i> Kubernetes</li>
+    <details>
+      <summary>Lululemon - Remote, Toronto (Nov 2019 – Present)</summary>
+      <ul>
+        <li><strong>Role:</strong> DevOps Engineer</li>
+        <li>Designed and implemented cloud-based solutions on AWS.</li>
+        <li>Automated infrastructure using Terraform and CloudFormation.</li>
+        <li>Improved deployment speed by 30% with CI/CD pipelines.</li>
       </ul>
-    </div>
-  </section>
+    </details>
 
-  <!-- Resume Section -->
-  <section id="resume">
-    <div class="container">
-      <h2>Resume</h2>
-      <p>Click below to download my full resume:</p>
-      <a href="assets/Pramod_DevOps.pdf" target="_blank" class="btn">Download Resume</a>
-      <!-- Optionally embed resume HTML if needed -->
-    </div>
+    <details>
+      <summary>Servus Credit Union - Edmonton, AB (Apr 2019 – Nov 2019)</summary>
+      <ul>
+        <li><strong>Role:</strong> DevOps Engineer</li>
+        <li>Developed Azure security policies for cloud migration.</li>
+        <li>Implemented CI/CD pipelines using Ansible and Kubernetes.</li>
+        <li>Worked with Azure Kubernetes Service (AKS) for container orchestration.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Global Relay - Vancouver, BC (Feb 2017 – Mar 2019)</summary>
+      <ul>
+        <li><strong>Role:</strong> DevOps Cloud Engineer</li>
+        <li>Designed infrastructure using AWS services (EC2, S3, VPC).</li>
+        <li>Built CI pipelines with Jenkins, Maven, and Terraform.</li>
+        <li>Deployed Dockerized applications and automated AWS management with Python.</li>
+      </ul>
+    </details>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p><i class="fas fa-envelope"></i> pramod.chilukuri3@gmail.com</p>
-      <p><i class="fas fa-phone"></i> 647-247-6533</p>
+  <section id="contact" class="section container">
+    <h2>Contact</h2>
+    <p class="section-intro">
+      Available for select freelance opportunities. Have an exciting project you need help with? Send me an email or contact me via instant message!
+    </p>
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> <a href="mailto:pramod.chilukuri3@gmail.com">pramod.chilukuri3@gmail.com</a></p>
+      <p><i class="fas fa-phone"></i> <a href="tel:647-247-6533">647-247-6533</a></p>
     </div>
+    <p class="resume-download">
+      <a href="assets/Pramod_DevOps.pdf" class="btn" target="_blank">Download My Resume</a>
+    </p>
   </section>
 
   <!-- Footer -->
@@ -112,14 +140,14 @@
     </div>
   </footer>
 
-  <!-- Optional JavaScript for smooth scrolling -->
+  <!-- Smooth Scrolling Script -->
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
   </script>
