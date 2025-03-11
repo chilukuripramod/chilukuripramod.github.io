@@ -1,237 +1,654 @@
-/* Reset and Global Styles */
+/******************************************
+  Fonts & Variables
+*******************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Fira+Code:wght@400;600&family=Montserrat:wght@700&display=swap');
+
+:root {
+  --bg-color: #0e1117;
+  --text-color: #fff;
+  --dim-text: #8b949e;
+  --primary-color: #8b5cf6;      /* Purple */
+  --accent-color: #58a6ff;       /* Blue */
+  --card-bg: #161b22;           /* Dark card background */
+  --border-color: #30363d;      /* Dark border color */
+  --hover-color: #a78bfa;       /* Hover color for buttons/links */
+}
+
+/******************************************
+  Base Styles
+*******************************************/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
-  font-family: 'Montserrat', sans-serif;
-  /* Dark fixed background image from assets folder */
-  background: url('assets/hero-bg.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Container Utility */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 1rem 0;
-}
-
-/* Navigation Bar */
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 999;
-}
+/******************************************
+  Header & Navigation
+*******************************************/
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  padding: 1rem 4rem;
+  z-index: 999;
   display: flex;
+  justify-content: space-between; /* logo left, nav right */
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
+}
+.logo {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
 }
 .logo h1 {
+  font-family: 'Fira Code', monospace;
   font-size: 1.5rem;
-  color: #ffcc00; /* Accent color */
-  font-weight: 700;
+  background: linear-gradient(90deg, #f472b6, #a78bfa);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0;
 }
-.nav-links {
-  list-style: none;
+.logo-highlight {
+  color: var(--hover-color);
+}
+/* Center nav by absolutely positioning it */
+.nav-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-menu ul {
   display: flex;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
 }
-.nav-links li a {
-  text-decoration: none;
+.nav-menu a {
+  font-family: 'Fira Code', monospace;
+  text-transform: uppercase;
   color: #fff;
-  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
   transition: color 0.3s ease;
 }
-.nav-links li a:hover {
-  color: #ffcc00;
+.nav-menu a:hover {
+  color: var(--hover-color);
 }
 
-/* Hero Section */
-.hero {
-  min-height: 100vh;
+/******************************************
+  Hero Section
+*******************************************/
+.hero-section {
   position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 4rem;
+  padding-top: 3rem; /* enough to avoid nav overlap */
 }
-.overlay {
+.hero-bg {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: url('assets/hero-bg.jpeg') center/cover no-repeat;
+  filter: brightness(0.3);
+  z-index: -1;
 }
 .hero-content {
-  position: relative;
   z-index: 2;
+  width: 100%;
+  padding: 2rem;
+  overflow: visible;
 }
-.hero-name {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.main-title {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(3rem, 10vw, 10rem);
+  margin-bottom: 1rem;
+  line-height: 1.1;
 }
-.hero-roles {
-  font-size: 1.2rem;
+.sub-title {
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  background: linear-gradient(90deg, #a78bfa, #fbbf24);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-top: 3rem; /* extra space below name */
+  margin-bottom: 3rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/******************************************
+  Hero Socials & Scroll Indicator
+*******************************************/
+.hero-socials {
   margin-bottom: 1.5rem;
 }
-.social-icons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+.icon-social {
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+.icon-social:hover {
+  transform: scale(1.2);
+}
+.scroll-indicator {
   margin-top: 1rem;
+  text-align: center;
 }
-.social-icons a {
-  color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+.scroll-indicator a {
+  display: inline-block;
 }
-.social-icons a:hover {
-  color: #ffcc00;
+.scroll-indicator .icon-social {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+.scroll-indicator:hover {
+  opacity: 0.8;
 }
 
-/* Shared Section Styles */
-.section {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-.section h2 {
+/******************************************
+  Section Containers
+*******************************************/
+.section-container {
+  padding: 8rem 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #ffcc00;
+  position: relative;
 }
-.section-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  color: #ddd;
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 5rem);
+  line-height: 1.2;
 }
 
-/* Expertise Section */
-.expertise-list {
+/******************************************
+  Expertise Section (with Background)
+*******************************************/
+/* Container for 3 side-by-side boxes */
+.expertise-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  list-style: none;
+  gap: 2.6rem;  /* increased gap between boxes */
+  margin-top: 2rem;
+}
+
+/* Each expertise box - increased width and padding */
+.expertise-box {
+  background: #DDD6FE;  /* pastel purple background */
+  border: none;
+  border-radius: 12px;
+  width: 350px;         /* increased width for readability */
+  padding: 3.0rem;      /* increased padding */
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+  color: #1f2937;
+}
+.expertise-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Top icon within each box */
+.expertise-icon img {
+  width: 48px;
+  display: block;
+  margin: 0 auto 1rem; /* center icon */
+}
+
+/* Headings & text inside the box */
+.expertise-box h3 {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.6rem; 
+  margin-bottom: 1rem;
+  color: #4c1d95;      /* deeper purple heading */
+}
+.expertise-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #374151;
+}
+
+/* Skill list within each box */
+.expertise-list {
+  margin-top: 1rem;
 }
 .expertise-list li {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-.expertise-list li:hover {
-  background: rgba(255, 204, 0, 0.2);
-}
-
-/* Work Section */
-.project-placeholder {
-  text-align: center;
-  margin-top: 2rem;
-  font-style: italic;
-  color: #ccc;
-}
-
-/* Experience Section (Collapsible) */
-details {
-  background: rgba(255, 255, 255, 0.1);
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  padding: 1rem;
-  cursor: pointer;
-}
-details summary {
-  font-weight: 600;
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
   font-size: 1.1rem;
-  outline: none;
+  color: #1f2937;
 }
-details summary::-webkit-details-marker {
+.skill-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5rem;
+}
+
+/******************************************
+  Work Section
+*******************************************/
+/* "My Work" Section - no background color to inherit site background */
+.work-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Title styling (already in your .section-title) */
+
+/* 3 columns side by side */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 boxes in each row */
+  gap: 2.5rem; 
+  margin-top: 2rem;
+}
+
+/* Each project box - gradient background, bigger fonts */
+.work-item {
+  background: linear-gradient(160deg, #34d399 0%, #a78bfa 100%); /* teal-to-purple gradient */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 2rem;
+  transition: transform 0.3s;
+  text-align: left;
+  color: #fff;
+}
+.work-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Project image - each box can display an image if desired */
+.work-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Project title - bigger font */
+.work-item h4 {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.4rem; /* bigger heading */
+  margin-bottom: 0.5rem;
+}
+.work-item p {
+  font-size: 1.1rem; /* bigger text */
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+/* Button for GitHub link */
+.btn-view-project {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background: #2563eb; /* bright blue button */
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+.btn-view-project:hover {
+  background: #3b82f6;
+}
+
+/* Center the scroll-down icon at the bottom */
+.scroll-indicator {
+  margin-top: 3rem;
+  text-align: center;
+}
+.scroll-indicator a {
+  display: inline-block;
+}
+.scroll-indicator .icon-social {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+}
+.scroll-indicator .icon-social:hover {
+  transform: scale(1.2);
+}
+
+/******************************************
+  Experience Section
+*******************************************/
+/******************************************
+  Experience Section - More Saturated Purples
+*******************************************/
+
+/* Container for collapsible details */
+.experience-collapsible {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Each collapsible job entry */
+.experience-collapsible details {
+  background: #C4B5FD; /* medium purple background */
+  color: #1f2937;      /* dark text for contrast */
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  position: relative;
+  transition: background 0.3s;
+  padding: 0.5rem;
+}
+
+/* Hover effect: slightly lighten or intensify the color */
+.experience-collapsible details:hover {
+  filter: brightness(1.05);
+}
+
+/* Hide default triangle marker (optional) */
+.experience-collapsible summary::-webkit-details-marker {
   display: none;
 }
-details ul {
-  margin-top: 1rem;
-  list-style: disc;
-  padding-left: 1.5rem;
-}
 
-/* Contact Section */
-.contact-info {
-  text-align: center;
-  margin-top: 2rem;
-}
-.contact-info p {
-  margin: 0.5rem 0;
-}
-.contact-info a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.contact-info a:hover {
-  color: #ffcc00;
-}
-.resume-download {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-/* Button Styles */
-.btn {
-  display: inline-block;
-  background: #ffcc00;
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
+/* The clickable summary line */
+.experience-collapsible summary {
+  font-size: 1.1rem;
+  font-family: 'Fira Code', monospace;
   font-weight: 600;
-  transition: background 0.3s ease;
-}
-.btn:hover {
-  background: #e6b800;
+  color: #4c1d95; /* deeper purple for summary text */
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  padding: 1rem;
+  margin: -0.5rem; /* offsets container's .5rem padding */
+  border-radius: 8px;
 }
 
-/* Footer */
-footer {
-  background: rgba(0,0,0,0.7);
-  padding: 1rem 0;
+/* The expanded content with a slightly darker shade */
+.experience-content {
+  background: #A78BFA; /* a bit darker purple for content area */
+  margin: 0 0.5rem 0.5rem;
+  border-radius: 6px;
+  padding: 1rem;
+  color: #f3f4f6; /* light text for contrast in the content */
+}
+.experience-content p {
+  margin: 0.5rem 0 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Skill badges - pastel purple with darker text */
+.skill-badges {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.badge {
+  background: #DDD6FE; /* pastel purple for badges */
+  color: #1f2937;
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/******************************************
+  Scroll Indicator
+*******************************************/
+.scroll-indicator {
+  margin-top: 3rem;
   text-align: center;
 }
-footer p {
-  margin: 0;
-  color: #fff;
-  font-size: 0.9rem;
+.scroll-indicator a {
+  display: inline-block;
+}
+.scroll-indicator .icon-social {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+}
+.scroll-indicator .icon-social:hover {
+  transform: scale(1.2);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-name {
-    font-size: 2.2rem;
-  }
-  .hero-roles {
-    font-size: 1rem;
-  }
-  .nav-links {
-    display: none; /* Hide nav links on mobile for now */
-  }
-  .navbar {
-    justify-content: space-between;
-  }
+/******************************************
+  Contact Section
+*******************************************/
+/******************************************
+  Contact Section
+*******************************************/
+.contact-section {
+  /* No background here so it inherits your site’s dark background, or you can add one. */
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.contact-layout {
+  display: flex;
+  flex-wrap: wrap; /* so on mobile, they stack */
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left; /* left align content inside each column */
+}
+
+/* Left side bigger text */
+.contact-left {
+  flex: 1.2; /* or any ratio that suits your layout */
+  min-width: 300px;
+}
+
+.contact-left h3 {
+  font-size: 1.8rem;
+  color: var(--accent-color); /* or a bright color */
+  margin-bottom: 1rem;
+}
+
+.contact-info {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--dim-text);
+  margin-bottom: 1.5rem;
+}
+
+.contact-details {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.contact-details li {
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between icon and text */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #06b6d4;
+}
+
+.contact-details li strong {
+  margin-right: 0.3rem; /* small spacing after the label */
+  color: #0ea5e9;
+}
+
+.contact-details li a {
+  color: #06b6d4;
+  text-decoration: none;
+}
+
+.contact-details li a:hover {
+  color: #0284c7; /* Darker turquoise on hover */
+}
+
+.contact-details a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-details a:hover {
+  color: var(--hover-color);
+}
+
+.icon-contact {
+  width: 24px; /* or 28px, 32px, etc. */
+  height: 24px;
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+  font-size: 0.95rem;
+}
+
+.resume-btn:hover {
+  background: var(--hover-color);
+}
+
+/* Right side contact form */
+/* Contact Form with a Slightly Darker Light Gradient */
+.contact-form {
+  background: linear-gradient(160deg, #A5B4FC 0%, #C7D2FE 100%);
+  border-radius: 8px;
+  padding: 2rem;
+  color: #1e293b;  /* Darker text for contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+.contact-form:hover {
+  transform: translateY(-5px);
+}
+
+/* Form Heading */
+.contact-form h4 {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: #1e293b;
+}
+
+/* Label Styling */
+.contact-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  color: #4b5563;  /* medium gray */
+  font-weight: 500;
+}
+
+/* Input and Textarea Styling */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #a78bfa;
+}
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* Send Button Styling */
+.btn-send {
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-send:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/******************************************
+  Footer
+*******************************************/
+.footer {
+  background: var(--card-bg);
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--dim-text);
+}
+
+/******************************************
+  Back to Top
+*******************************************/
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.back-to-top:hover {
+  transform: scale(1.1);
 }

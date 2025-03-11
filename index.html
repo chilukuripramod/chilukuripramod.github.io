@@ -4,154 +4,305 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pramod Chilukuri | DevOps Portfolio</title>
-  <!-- Google Fonts for Modern Typography -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <!-- Link to your stylesheet -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Fira+Code:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- (Optional) Favicon -->
-  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar container">
-      <!-- "Coding format" name on top-left -->
-      <div class="logo">
-        <h1>&lt;PramodChilukuri/&gt;</h1>
-      </div>
-      <!-- Navigation Links -->
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">
+      <h1>pramodchilukuri<span class="logo-highlight">()</span></h1>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#home">home</a></li>
+        <li><a href="#expertise">expertise</a></li>
+        <li><a href="#work">work</a></li>
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Home Section (Hero) -->
-  <section id="home" class="hero">
-    <div class="overlay"></div>
+  <!-- Hero / Home Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg"></div>
     <div class="hero-content">
-      <!-- Big Bold Name -->
-      <h2 class="hero-name">Pramod Chilukuri</h2>
-      <!-- Roles -->
-      <p class="hero-roles">Senior DevOps Specialist | Cloud Engineer | SRE</p>
-      <!-- Social Icons -->
-      <div class="social-icons">
-        <a href="https://github.com/your-github-username" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/your-linkedin-username" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:pramod.chilukuri3@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        <a href="tel:647-247-6533" target="_blank"><i class="fas fa-phone"></i></a>
+      <h1 class="main-title">PRAMOD CHILUKURI</h1>
+      <h2 class="sub-title">Senior DevOps Specialist | Senior Cloud Engineer &amp; SRE</h2>
+      <div class="hero-socials">
+        <a href="https://github.com/chilukuripramod" target="_blank">
+          <img src="assets/icons/github.png" alt="GitHub" class="icon-social" />
+        </a>
+        <a href="https://www.linkedin.com/in/pramod-chilukuri-4ab17520a/" target="_blank">
+          <img src="assets/icons/linkedin.png" alt="LinkedIn" class="icon-social" />
+        </a>
+        <a href="mailto:pramod.chilukuri3@gmail.com">
+          <img src="assets/icons/email.png" alt="Email" class="icon-social" />
+        </a>
+      </div>
+      <div class="scroll-indicator">
+        <a href="#expertise">
+          <img src="assets/icons/scroll-down.png" alt="Scroll Down" class="icon-social" />
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Expertise Section -->
-  <section id="expertise" class="section container">
-    <h2>Expertise</h2>
-    <p class="section-intro">
-      I specialize in modern DevOps practices, ensuring scalable and efficient systems. Below are some of the key tools and technologies I work with:
-    </p>
-    <ul class="expertise-list">
-      <li>AWS</li>
-      <li>Azure</li>
-      <li>GCP</li>
-      <li>Kubernetes</li>
-      <li>Docker</li>
-      <li>CI/CD (Jenkins, GitLab, GitHub Actions)</li>
-      <li>Terraform</li>
-      <li>Ansible</li>
-      <li>Python</li>
-      <li>Bash/PowerShell</li>
-    </ul>
+  <section id="expertise" class="expertise-section section-container">
+    <h2 class="section-title">My Expertise</h2>
+    <div class="expertise-cards">
+      <!-- Card 1: Cloud Platforms -->
+      <div class="expertise-box">
+        <div class="expertise-icon">
+          <img src="assets/icons/cloud.png" alt="Cloud Icon" />
+        </div>
+        <h3>Cloud Platforms</h3>
+        <p class="expertise-desc">
+          Proficient in multiple cloud environments for scalable &amp; secure deployments.
+        </p>
+        <ul class="expertise-list">
+          <li><img src="assets/icons/aws.png" alt="AWS" class="skill-icon" />Amazon Web Services</li>
+          <li><img src="assets/icons/azure.png" alt="Azure" class="skill-icon" />Microsoft Azure</li>
+          <li><img src="assets/icons/gcp.png" alt="GCP" class="skill-icon" />Google Cloud Platform</li>
+        </ul>
+      </div>
+      <!-- Card 2: CI/CD & Automation -->
+      <div class="expertise-box">
+        <div class="expertise-icon">
+          <img src="assets/icons/automation.png" alt="Automation Icon" />
+        </div>
+        <h3>CI/CD &amp; Automation</h3>
+        <p class="expertise-desc">
+          Expert in building automated pipelines and container orchestration for rapid delivery.
+        </p>
+        <ul class="expertise-list">
+          <li><img src="assets/icons/jenkins.png" alt="Jenkins" class="skill-icon" />Jenkins</li>
+          <li><img src="assets/icons/gitlab.png" alt="GitLab CI/CD" class="skill-icon" />GitLab CI/CD</li>
+          <li><img src="assets/icons/k8s.png" alt="Kubernetes" class="skill-icon" />Kubernetes &amp; Docker</li>
+        </ul>
+      </div>
+      <!-- Card 3: Configuration Management -->
+      <div class="expertise-box">
+        <div class="expertise-icon">
+          <img src="assets/icons/config.png" alt="Configuration Icon" />
+        </div>
+        <h3>Configuration Mgmt</h3>
+        <p class="expertise-desc">
+          Skilled in automation and configuration management to ensure efficient IT operations.
+        </p>
+        <ul class="expertise-list">
+          <li><img src="assets/icons/ansible.png" alt="Ansible" class="skill-icon" />Ansible</li>
+          <li><img src="assets/icons/salt.png" alt="Salt" class="skill-icon" />Salt</li>
+          <li><img src="assets/icons/terraform.png" alt="Terraform" class="skill-icon" />Terraform</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <a href="#work">
+        <img src="assets/icons/scroll-down.png" alt="Scroll Down" class="icon-social" />
+      </a>
+    </div>
   </section>
 
   <!-- Work Section -->
-  <section id="work" class="section container">
-    <h2>Work</h2>
-    <p class="section-intro">
-      Here are some of the projects I've worked on (coming soon!). Stay tuned for more details or check out my GitHub profile.
-    </p>
-    <div class="project-placeholder">
-      <p>Projects will be showcased here...</p>
+  <section id="work" class="work-section section-container">
+    <h2 class="section-title">My Work</h2>
+  
+    <div class="work-grid">
+      <!-- Project 1 -->
+      <div class="work-item">
+        <img src="assets/project1.png" alt="Project 1" />
+        <h4>Project 1</h4>
+        <p>AWS, Terraform, Jenkins</p>
+        <a href="#" class="btn-view-project" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project 2 -->
+      <div class="work-item">
+        <img src="assets/project2.png" alt="Project 2" />
+        <h4>Project 2</h4>
+        <p>Azure DevOps, Docker</p>
+        <a href="#" class="btn-view-project" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project 3 -->
+      <div class="work-item">
+        <img src="assets/project3.png" alt="Project 3" />
+        <h4>Project 3</h4>
+        <p>Kubernetes, Microservices</p>
+        <a href="#" class="btn-view-project" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project 4 -->
+      <div class="work-item">
+        <img src="assets/project4.png" alt="Project 4" />
+        <h4>Project 4</h4>
+        <p>AWS, Python</p>
+        <a href="#" class="btn-view-project" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project 5 -->
+      <div class="work-item">
+        <img src="assets/project5.png" alt="Project 5" />
+        <h4>Project 5</h4>
+        <p>Azure, Ansible</p>
+        <a href="#" class="btn-view-project" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Project 6 -->
+      <div class="work-item">
+        <img src="assets/project6.png" alt="Project 6" />
+        <h4>Project 6</h4>
+        <p>GCP, Chef</p>
+        <a href="#" class="btn-view-project" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  
+    <!-- Scroll-down icon linking to the next section (e.g., #experience) -->
+    <div class="scroll-indicator">
+      <a href="#experience">
+        <img src="assets/icons/scroll-down.png" alt="Scroll Down" class="icon-social" />
+      </a>
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="section container">
-    <h2>Experience</h2>
-    <p class="section-intro">
-      Below is my professional background in a collapsible format. Click each to expand details.
-    </p>
-
-    <details>
-      <summary>Lululemon - Remote, Toronto (Nov 2019 – Present)</summary>
-      <ul>
-        <li><strong>Role:</strong> DevOps Engineer</li>
-        <li>Designed and implemented cloud-based solutions on AWS.</li>
-        <li>Automated infrastructure using Terraform and CloudFormation.</li>
-        <li>Improved deployment speed by 30% with CI/CD pipelines.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>Servus Credit Union - Edmonton, AB (Apr 2019 – Nov 2019)</summary>
-      <ul>
-        <li><strong>Role:</strong> DevOps Engineer</li>
-        <li>Developed Azure security policies for cloud migration.</li>
-        <li>Implemented CI/CD pipelines using Ansible and Kubernetes.</li>
-        <li>Worked with Azure Kubernetes Service (AKS) for container orchestration.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>Global Relay - Vancouver, BC (Feb 2017 – Mar 2019)</summary>
-      <ul>
-        <li><strong>Role:</strong> DevOps Cloud Engineer</li>
-        <li>Designed infrastructure using AWS services (EC2, S3, VPC).</li>
-        <li>Built CI pipelines with Jenkins, Maven, and Terraform.</li>
-        <li>Deployed Dockerized applications and automated AWS management with Python.</li>
-      </ul>
-    </details>
+  <section id="experience" class="experience-section section-container">
+    <h2 class="section-title">Professional Experience</h2>
+  
+    <div class="experience-collapsible">
+      <!-- Job 1 -->
+      <details>
+        <summary>DevOps Engineer @ Lululemon (2019 - Present)</summary>
+        <div class="experience-content">
+          <p>
+            Responsible for designing and implementing AWS infrastructure using Terraform,
+            containerizing applications with Docker & Kubernetes, and maintaining CI/CD pipelines
+            with Jenkins & GitLab. Ensured high availability and security scanning with AWS Inspector.
+          </p>
+          <div class="skill-badges">
+            <span class="badge">AWS</span>
+            <span class="badge">Terraform</span>
+            <span class="badge">Kubernetes</span>
+            <span class="badge">Jenkins</span>
+          </div>
+        </div>
+      </details>
+  
+      <!-- Job 2 -->
+      <details>
+        <summary>Senior Cloud Engineer @ Servus Credit Union (2019 - 2020)</summary>
+        <div class="experience-content">
+          <p>
+            Managed Azure migrations, orchestrated container deployments with Kubernetes & Docker,
+            leveraged Terraform for IaaS provisioning, and integrated CI/CD using Azure DevOps.
+          </p>
+          <div class="skill-badges">
+            <span class="badge">Azure</span>
+            <span class="badge">Terraform</span>
+            <span class="badge">Kubernetes</span>
+            <span class="badge">Docker</span>
+          </div>
+        </div>
+      </details>
+  
+      <!-- Job 3 -->
+      <details>
+        <summary>DevOps Cloud Engineer @ Global Relay (2017 - 2019)</summary>
+        <div class="experience-content">
+          <p>
+            Built AWS-based solutions & automated processes with Ansible & Chef, streamlined monitoring
+            with Splunk, ELK, and custom dashboards, optimized S3 usage, and implemented EBS snapshot automation.
+          </p>
+          <div class="skill-badges">
+            <span class="badge">AWS</span>
+            <span class="badge">Ansible</span>
+            <span class="badge">Chef</span>
+            <span class="badge">ELK</span>
+          </div>
+        </div>
+      </details>
+    </div>
+  
+    <!-- Scroll-down icon to next section, e.g., #contact -->
+    <div class="scroll-indicator">
+      <a href="#contact">
+        <img src="assets/icons/scroll-down.png" alt="Scroll Down" class="icon-social" />
+      </a>
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section container">
-    <h2>Contact</h2>
-    <p class="section-intro">
-      Available for select freelance opportunities. Have an exciting project you need help with? Send me an email or contact me via instant message!
-    </p>
-    <div class="contact-info">
-      <p><i class="fas fa-envelope"></i> <a href="mailto:pramod.chilukuri3@gmail.com">pramod.chilukuri3@gmail.com</a></p>
-      <p><i class="fas fa-phone"></i> <a href="tel:647-247-6533">647-247-6533</a></p>
+  <section id="contact" class="contact-section section-container">
+    <h2 class="section-title">Contact</h2>
+  
+    <div class="contact-layout">
+      <!-- Left Side: Big contact text, phone, etc. -->
+      <div class="contact-left">
+        <h3>Available for select freelance opportunities</h3>
+        <p class="contact-info">
+          Have an exciting project you need help with?<br />
+          Send me an email or contact me via instant message!
+        </p>
+        <ul class="contact-details">
+          <li>
+            <img src="assets/icons/email.png" alt="Email Icon" class="icon-contact" />
+            <strong>Email:</strong>
+            <a href="mailto:pramod.chilukuri3@gmail.com">pramod.chilukuri3@gmail.com</a>
+          </li>
+          <li>
+            <img src="assets/icons/phone.png" alt="Phone Icon" class="icon-contact" />
+            <strong>Phone:</strong>
+            <a href="tel:647-247-6533">647-247-6533</a>
+          </li>
+          <li>
+            <img src="assets/icons/linkedin.png" alt="LinkedIn Icon" class="icon-contact" />
+            <strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/pramod-chilukuri-4ab17520a/" target="_blank">pramod-chilukuri-4ab17520a</a>
+          </li>
+          <li>
+            <img src="assets/icons/github.png" alt="GitHub Icon" class="icon-contact" />
+            <strong>GitHub:</strong>
+            <a href="https://github.com/chilukuripramod" target="_blank">chilukuripramod</a>
+          </li>
+        </ul>
+        <a href="assets/Pramod_DevOps.pdf" class="resume-btn" download>Download Resume</a>
+      </div>
+  
+      <!-- Right Side: Contact Form -->
+      <div class="contact-right">
+        <form 
+          action="https://formspree.io/f/YOUR_FORM_ID" 
+          method="POST" 
+          class="contact-form"
+        >
+          <!-- Replace the action with your actual form endpoint or mailto -->
+          <h4>Send Me a Message</h4>
+          
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+      
+          <label for="email">Email</label>
+          <input type="email" id="email" name="_replyto" required />
+      
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+      
+          <button type="submit" class="btn-send">Send Message</button>
+        </form>
+      </div>
     </div>
-    <p class="resume-download">
-      <a href="assets/Pramod_DevOps.pdf" class="btn" target="_blank">Download My Resume</a>
-    </p>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Pramod Chilukuri. All rights reserved.</p>
-    </div>
+  <footer class="footer">
+    <p>&copy; 2025 Pramod Chilukuri. All rights reserved.</p>
   </footer>
 
-  <!-- Smooth Scrolling Script -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+    <a href="#home"><img src="assets/icons/up-arrow.png" alt="Back to Top" class="icon-contact" /></a>
+  </div>
+
 </body>
 </html>
