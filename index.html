@@ -271,12 +271,9 @@
   
       <!-- Right Side: Contact Form -->
       <div class="contact-right">
-        <form 
-          action="https://formspree.io/f/YOUR_FORM_ID" 
-          method="POST" 
-          class="contact-form"
-        >
-          <!-- Replace the action with your actual form endpoint or mailto -->
+        <form name="contact" method="POST" data-netlify="true" class="contact-form">
+          <!-- Hidden input is required for Netlify -->
+          <input type="hidden" name="form-name" value="contact" />
           <h4>Send Me a Message</h4>
           
           <label for="name">Name</label>
